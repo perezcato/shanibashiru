@@ -1,7 +1,84 @@
 import React from 'react';
-
+import {publications} from "../data/publications";
 
 const Publications = () => {
+
+  const [list, setList] = React.useState('journals');
+
+
+  const pub = () => {
+    if(list === 'journals'){
+      return (
+        <table className="mx-auto w-100">
+          <thead>
+          <tr>
+            <th className="w-3/6 font-semibold text-base text-left py-8 " style={{color: '#414141'}}>Title</th>
+            <th className="w-1/6 font-semibold text-base py-8 " style={{color: '#414141'}}>Year</th>
+            <th className="w-1/6 font-semibold text-base py-8" style={{color: '#414141'}}>Co. Authors</th>
+            <th className="w-1/6 font-semibold text-base py-8" style={{color: '#414141'}}>Publication</th>
+          </tr>
+          </thead>
+          <tbody>
+          {
+            publications.journals.data.map((journal) => {
+              return (
+                <tr className="border-t" style={{borderTopColor: '#727272'}}>
+                  <td className=" py-12">
+                    {journal.title}
+                  </td>
+                  <td className="text-center">
+                    {journal.year}
+                  </td>
+                  <td className="text-center">
+                    {journal['co-authors']}
+                  </td>
+                  <td className="text-center">
+                    {
+                      journal.publication
+                    }
+                  </td>
+                </tr>
+              )
+            })
+          }
+          </tbody>
+        </table>
+      )
+    }
+    if(list === 'articles'){
+      return (
+        <table className="mx-auto w-100">
+          <thead>
+          <tr>
+            <th className="w-3/6 font-semibold text-base text-left py-8 " style={{color: '#414141'}}>Article</th>
+            <th className="w-1/6 font-semibold text-base py-8 " style={{color: '#414141'}}>date</th>
+            <th className="w-1/6 font-semibold text-base py-8" style={{color: '#414141'}}>Newspaper</th>
+          </tr>
+          </thead>
+          <tbody>
+          {
+            publications.articles.map((article) => {
+              return (
+                <tr className="border-t" style={{borderTopColor: '#727272'}}>
+                  <td className=" py-12">
+                    {article.title}
+                  </td>
+                  <td className="text-center">
+                    {article.date}
+                  </td>
+                  <td className="text-center">
+                    {article.newspaper}
+                  </td>
+                </tr>
+              )
+            })
+          }
+          </tbody>
+        </table>
+      )
+    }
+  }
+
   return (
     <div>
       <div className="hidden md:block banner-color py-20">
@@ -10,106 +87,32 @@ const Publications = () => {
         </div>
       </div>
       <div className="flex container mx-auto">
-        <div className="md:w-2/3 my-10 mx-16">
-          <table className="mx-auto w-100">
-            <thead className="border-b border-gray-600">
-            <tr>
-              <th className="text-color w-3/6 font-semibold text-base text-left py-8 ">Title</th>
-              <th className="text-color w-1/6 font-semibold text-base py-8 ">Year</th>
-              <th className="text-color w-1/6 font-semibold text-base py-8 ">Co. Authors</th>
-              <th className="text-color w-1/6 font-semibold text-base py-8 ">Publication</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Referee bias and its impact on low fans attendance
-                at stadiums: Standpoints from Ghana.
-              </td>
-              <td className="text-center">
-                2017
-              </td>
-              <td className="text-center">
-                Emmanuel, O.
-              </td>
-              <td className="text-center">International Journal of Physical Education,
-                Sports and Health,</td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Does Quest for Entertainment and Socialization attract
-                football fans to stadiums? Insights from Ghana
-              </td>
-              <td className="text-center">
-                2017
-              </td>
-              <td className="text-center">
-                -
-              </td>
-              <td className="text-center">
-                International Journal of Innovative
-                Research and Development
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Determining factors that pull crowds to stadiums during football matches in Ghana
-              </td>
-              <td className="text-center">
-                2015
-              </td>
-              <td className="text-center">
-                -
-              </td>
-              <td className="text-center">
-                International Journal of Health, Physical Education and Computer Science in Sports
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Live Broadcast of football matches on television- a booster or blip to fans attendance
-              </td>
-              <td className="text-center">
-                2015
-              </td>
-              <td className="text-center">
-                Winful, C., W., & Mahama, F.
-              </td>
-              <td className="text-center">
-                International Journal of Law, Education, Social and Sports Studies
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Determinants of football fans stadium attendance - Perspectives from Ghana
-              </td>
-              <td className="text-center">
-                2015
-              </td>
-              <td className="text-center">
-                -
-              </td>
-              <td className="text-center">
-                International Journal of Computer Application and Management
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                When Refereeing turns ugly: Investigating fans response to
-                the specter of Bias Officiating in Ghana Football.
-              </td>
-              <td className="text-center">
-                2017
-              </td>
-              <td className="text-center">
-                Winful, C., W., & Mahama, F.
-              </td>
-              <td className="text-center">
-                International Journal of Innovative Research and Development
-              </td>
-            </tr>
-            </tbody>
-          </table>
+        <div className="md:w-2/3 my-10 mx-8">
+          <div>
+            <button onClick={() => {
+              setList('journals')
+            }} className="banner-color publication-button">
+              Journals
+            </button>
+            <button onClick={ () => {
+            setList('articles')
+            }} className="banner-color publication-button">
+              Newspaper Articles
+            </button>
+            <button className="banner-color publication-button">
+              Seminar Presentations & Conferences
+            </button>
+            <button className="banner-color publication-button">
+             Workshop Presentations
+            </button>
+            <button className="banner-color publication-button">
+              Works in Progress
+            </button>
+          </div>
+
+          {
+            pub()
+          }
 
         </div>
         <div className="md:w-1/3">

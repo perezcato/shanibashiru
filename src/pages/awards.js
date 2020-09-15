@@ -1,7 +1,25 @@
 import React from 'react';
-
+import {awards} from "../data/awards";
 
 const Awards = () => {
+
+  const award = (award, year, place) => {
+
+    return (
+      <tr className="border-t " style={{borderTopColor: '#727272'}}>
+        <td className=" py-12" style={{color: '#414141'}}>
+          {award}
+        </td>
+        <td className="text-center" style={{color: '#414141'}}>
+          {year}
+        </td>
+        <td className="text-center" style={{color: '#414141'}}>
+          {place}
+        </td>
+      </tr>
+    )
+  }
+
   return (
     <div>
       <div className="hidden md:block banner-color py-20">
@@ -13,47 +31,17 @@ const Awards = () => {
       <div className="flex container mx-auto">
         <div className="md:w-2/3 my-10 mx-16">
           <table className="mx-auto w-100">
-            <thead className="border-b border-gray-600">
+            <thead>
             <tr >
-              <th className="text-color w-3/5 font-semibold text-base text-left py-8 ">Award</th>
-              <th className="text-color w-1/5 font-semibold text-base py-8 ">Year</th>
-              <th className="text-color w-1/5 font-semibold text-base py-8 ">Place</th>
+              <th className="w-3/5 font-semibold text-base text-left py-8" style={{color: '#414141'}}>Award</th>
+              <th className="text-color w-1/5 font-semibold text-base py-8" style={{color: '#414141'}}>Year</th>
+              <th className="text-color w-1/5 font-semibold text-base py-8" style={{color: '#414141'}}>Place</th>
             </tr>
             </thead>
             <tbody>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Best Teacher - using non- English language to teach- Desborough School-UK
-              </td>
-              <td className="text-center">
-                2004
-              </td>
-              <td className="text-center">
-                Desborough School-UK
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Best Accounts Office Worker - Volta River Authority (V.R.A)
-              </td>
-              <td className="text-center">
-                1990
-              </td>
-              <td className="text-center">
-                Volta River Authority (V.R.A)
-              </td>
-            </tr>
-            <tr className="border-b border-gray-600">
-              <td className=" py-12">
-                Best Economics Student - Tamale Secondary School
-              </td>
-              <td className="text-center">
-                1987
-              </td>
-              <td className="text-center">
-                Tamale Secondary School
-              </td>
-            </tr>
+            {
+              awards.map((congrats) => award(congrats.title, congrats.year, congrats.location))
+            }
             </tbody>
           </table>
         </div>

@@ -7,6 +7,7 @@ import Publications from "./pages/publications";
 import Research from "./pages/research";
 import Media from "./pages/media";
 import Awards from "./pages/awards";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path={'/'} component={Homepage}/>
         </Switch>
       </main>
+      <Footer />
     </div>
   );
 }
