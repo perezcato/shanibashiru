@@ -6,11 +6,18 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-images": "^1.1.7",
+    "react-photo-gallery": "^8.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "tailwindcss": "^1.8.5"
   },
   "scripts": {
+    "watch:css": "npx tailwindcss build ./src/assets/stylesheets/tailwind.css -o ./src/assets/stylesheets/index.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

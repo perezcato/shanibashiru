@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import Header from "./components/header/header";
+import Homepage from "./pages/homepage";
+import About from "./pages/about";
+import Publications from "./pages/publications";
+import Research from "./pages/research";
+import Media from "./pages/media";
+import Awards from "./pages/awards";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-body antialiased ">
+      <Header />
+      <main>
+        <Switch>
+          <Route path={'/about'} component={About}/>
+          <Route path={'/research'} component={Research}/>
+          <Route path={'/publications'} component={Publications}/>
+          <Route path={'/media'} component={Media}/>
+          <Route path={'/awards'} component={Awards}/>
+          <Route path={'/'} component={Homepage}/>
+        </Switch>
+      </main>
     </div>
   );
 }

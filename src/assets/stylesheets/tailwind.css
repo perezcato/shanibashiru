@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Calibre';
+    src: url("fonts/CalibreWeb-R-Bold.woff") format('woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url("fonts/CalibreWeb-R-Medium.woff") format('woff');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url("fonts/CalibreWeb-R-Semibold.woff") format('woff');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url("fonts/CalibreWeb-R-Regular.woff") format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url("fonts/georgiabold.ttf") format('ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url("fonts/GeorgiaRegularFont.ttf") format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url("fonts/georgiab.ttf") format('ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url("fonts/Georgia.ttf") format('ttf');
+    font-weight: 400;
+}
+
+.site-color{
+    color: #be6d54;
+}
+
+.site-background{
+    background-color: #be6d54;
+}
+
+.banner-color{
+    background-color: #14322b;
+}
+
+.text-color{
+    color: #0b322b;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
